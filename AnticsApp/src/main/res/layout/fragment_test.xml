@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <fragment
+        android:id="@+id/fragment1"
+        android:name="com.antics.FragmentTest"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        class="com.antics.SimFragment" />
+
+    <!--
+         <SlidingDrawer
+        android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:allowSingleTap="true"
+        android:content="@+id/content"
+        android:handle="@+id/handle"
+        android:orientation="vertical" >
+  
+
+    <ImageView
+        android:id="@id/handle"
+        android:layout_width="match_parent"
+        android:layout_height="44dip"
+        android:src="@drawable/upboard" />
+  -->
+
+    <RelativeLayout
+        
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:background="@drawable/controlbg"
+        android:orientation="vertical" >
+
+        <SeekBar
+            android:id="@+id/seekBar1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true" />
+
+        <ImageButton
+            android:id="@+id/rightArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/seekBar1"
+            android:contentDescription="right"
+            android:src="@android:drawable/ic_media_ff" />
+
+        <ImageButton
+            android:id="@+id/leftArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/seekBar1"
+            android:contentDescription="left"
+            android:src="@android:drawable/ic_media_rew" />
+
+        <ImageButton
+            android:id="@+id/downArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/seekBar1"
+            android:layout_toLeftOf="@+id/rightArrow"
+            android:layout_toRightOf="@+id/homebutton1"
+            android:contentDescription="down"
+            android:src="@drawable/downarrow" />
+
+        <ImageButton
+            android:id="@+id/upArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/seekBar1"
+            android:layout_toLeftOf="@+id/homebutton1"
+            android:layout_toRightOf="@+id/leftArrow"
+            android:contentDescription="UpArrow"
+            android:src="@drawable/uparrow" />
+
+        <ImageButton
+            android:id="@+id/homebutton1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/seekBar1"
+            android:layout_centerHorizontal="true"
+            android:src="@android:drawable/ic_menu_add" />
+
+    </RelativeLayout>
+
+ <!--   </SlidingDrawer> -->
+
+</LinearLayout>

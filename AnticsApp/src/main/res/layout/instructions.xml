@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/instruct"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/Soldiertxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/imageView2"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_marginLeft="15dp"
+        android:text="Soldier"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/red" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="106dp"
+        android:layout_height="111dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/Gatherertxt"
+        android:src="@drawable/soldier" />
+
+    <ImageView
+        android:id="@+id/ImageView01"
+        android:layout_width="106dp"
+        android:layout_height="111dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/imageView2"
+        android:src="@drawable/gatherer" />
+
+    <TextView
+        android:id="@+id/Workertxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/Gatherertxt"
+        android:layout_below="@+id/ImageView01"
+        android:text="Worker"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/blue" />
+
+    <TextView
+        android:id="@+id/queentxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Workertxt"
+        android:layout_alignBottom="@+id/Workertxt"
+        android:layout_alignLeft="@+id/Soldiertxt"
+        android:text="Queen"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/pink" />
+
+    <TextView
+        android:id="@+id/Gatherertxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:text="Gatherer"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/green" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:text="Swipe from the left to view Stats!"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView3"
+        android:src="@drawable/hand" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/ImageView01"
+        android:text="Quick Tips"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <ImageView
+        android:id="@+id/ImageView02"
+        android:layout_width="106dp"
+        android:layout_height="111dp"
+        android:layout_above="@+id/textView3"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/queen" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="106dp"
+        android:layout_height="111dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Workertxt"
+        android:src="@drawable/worker" />
+
+</RelativeLayout>
