@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger>
+
+    <dataSet config="main" >
+        <source path="/Users/danmalone/Documents/Programming/2013/AndroidStudio/Antics/AntSimulatorActivity/libraries/library/assets" />
+    </dataSet>
+    <dataSet config="release" >
+        <source path="/Users/danmalone/Documents/Programming/2013/AndroidStudio/Antics/AntSimulatorActivity/libraries/library/src/release/assets" />
+    </dataSet>
+
+</merger>
