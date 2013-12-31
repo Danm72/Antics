@@ -6,11 +6,9 @@ import com.antics.R;
 import com.antics.StatisticsFragment.SampleAdapter;
 import com.antics.ant.Ant;
 import com.antics.data.Board;
-import com.google.inject.Singleton;
 
 import java.util.LinkedList;
 
-@Singleton
 public class ConfigFile {
     public static final int scale = 2;
     public static final int GAME_THREAD_DELAY = 5000;

@@ -4,6 +4,7 @@ import com.antics.util.ConfigFile;
 import com.antics.util.FrameRateConfig;
 import com.antics.util.Music;
 import com.antics.util.MusicConfig;
+import com.googlecode.androidannotations.annotations.EActivity;
 
 import android.content.Context;
 import android.os.Bundle;

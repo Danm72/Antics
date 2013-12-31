@@ -10,7 +10,9 @@ import android.widget.Button;
 import com.antics.util.ConfigFile;
 import com.antics.util.Music;
 import com.antics.util.MusicConfig;
+import com.googlecode.androidannotations.annotations.EActivity;
 
+@EActivity
 public class MainMenuActivity extends Activity {
 	private Boolean changed = false;
 	private Boolean continueMusic = false;
@@ -30,7 +32,7 @@ public class MainMenuActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent simulator = new Intent(getApplicationContext(),
-						SimulatorFragment.class);
+						SimulatorFragment_.class);
 				MainMenuActivity.this.startActivity(simulator);
 			}
 		});

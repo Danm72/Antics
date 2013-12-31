@@ -1,46 +1,67 @@
 package com.antics;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.graphics.Matrix;
 import android.os.Bundle;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.SeekBar;
+
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.antics.util.ConfigFile;
 import com.antics.util.Music;
 import com.antics.util.MusicConfig;
-import com.jeremyfeinstein.slidingmenu.lib.SlidingMenu;
-import roboguice.activity.RoboFragmentActivity;
-import roboguice.inject.InjectView;
+import com.googlecode.androidannotations.annotations.AfterViews;
+import com.googlecode.androidannotations.annotations.EActivity;
+import com.googlecode.androidannotations.annotations.ViewById;
 
-public class SimulatorFragment extends RoboFragmentActivity {
+@EActivity
+public class SimulatorFragment extends SherlockFragmentActivity {
     static final int NONE = 0;
     static final int DRAG = 1;
     static final int ZOOM = 2;
-    @InjectView(R.id.seekBar1)
+    String[] mPlanetTitles;
+
+    private CharSequence mDrawerTitle;
+    private CharSequence mTitle;
+
+    @ViewById(R.id.seekBar1)
     SeekBar seek;
-    @InjectView(R.id.upArrow)
+    @ViewById(R.id.upArrow)
     ImageButton up;
-    @InjectView(R.id.downArrow)
+    @ViewById(R.id.downArrow)
     ImageButton down;
-    @InjectView(R.id.leftArrow)
+    @ViewById(R.id.leftArrow)
     ImageButton left;
-    @InjectView(R.id.rightArrow)
+    @ViewById(R.id.rightArrow)
     ImageButton right;
-    @InjectView(R.id.homebutton1)
+    @ViewById(R.id.homebutton1)
     ImageButton home;
+    @ViewById(R.id.drawer_layout)
+    DrawerLayout mDrawerLayout;
+    @ViewById(R.id.left_drawer)
+    ListView mDrawerList;
+    ActionBarDrawerToggle mDrawerToggle;
+
+
     Matrix matrix = new Matrix();
     Matrix savedMatrix = new Matrix();
     int mode = NONE;
     private int MUSIC_GAME = 1;
     private Boolean continueMusic = false;
     private String TAG = "GameFrag";
-    private SlidingMenu menu;
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -126,16 +147,16 @@ public class SimulatorFragment extends RoboFragmentActivity {
         });
 
         // configure the SlidingMenu
-        menu = new SlidingMenu(this);
-        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
-        menu.setShadowWidthRes(R.dimen.shadow_width);
-        menu.setShadowDrawable(R.drawable.shadow);
-        menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
-        menu.setFadeDegree(0.35f);
-        menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
-        menu.setMenu(R.layout.content_frame);
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.content_frame, new StatisticsFragment()).commit();
+//        menu = new SlidingMenu(this);
+//        menu.setTouchModeAbove(SlidingMenu.TOUCHMODE_FULLSCREEN);
+//        menu.setShadowWidthRes(R.dimen.shadow_width);
+//        menu.setShadowDrawable(R.drawable.shadow);
+//        menu.setBehindOffsetRes(R.dimen.slidingmenu_offset);
+//        menu.setFadeDegree(0.35f);
+//        menu.attachToActivity(this, SlidingMenu.SLIDING_CONTENT);
+//        menu.setMenu(R.layout.content_frame);
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(R.id.content_frame, new StatisticsFragment()).commit();
 
         if (ConfigFile.rendererCreated == false) {
             AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
@@ -168,11 +189,11 @@ public class SimulatorFragment extends RoboFragmentActivity {
 
     @Override
     public void onBackPressed() {
-        if (menu.isMenuShowing()) {
-            menu.showContent();
-        } else {
-            super.onBackPressed();
-        }
+//        if (menu.isMenuShowing()) {
+//            menu.showContent();
+//        } else {
+//            super.onBackPressed();
+//        }
     }
 
     @Override
@@ -192,4 +213,43 @@ public class SimulatorFragment extends RoboFragmentActivity {
         Music.start(this, Music.MUSIC_MENU);
     }
 
+
+    @AfterViews
+    void initialiseViews() {
+
+        mPlanetTitles = getResources().getStringArray(R.array.planets_array);
+
+        // set a custom shadow that overlays the main content when the drawer opens
+        mDrawerLayout.setDrawerShadow(R.drawable.drawer_shadow, GravityCompat.START);
+        // set up the drawer's list view with items and click listener
+        mDrawerList.setAdapter(new ArrayAdapter<String>(this,
+                R.layout.drawer_item, mPlanetTitles));
+
+        // enable ActionBar app icon to behave as action to toggle nav drawer
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setHomeButtonEnabled(true);
+
+        // ActionBarDrawerToggle ties together the the proper interactions
+        // between the sliding drawer and the action bar app icon
+        mDrawerToggle = new ActionBarDrawerToggle(
+                this,                  /* host Activity */
+                mDrawerLayout,         /* DrawerLayout object */
+                R.drawable.ic_drawer,  /* nav drawer image to replace 'Up' caret */
+                R.string.drawer_open,  /* "open drawer" description for accessibility */
+                R.string.drawer_close  /* "close drawer" description for accessibility */
+        ) {
+            public void onDrawerClosed(View view) {
+                getActionBar().setTitle(mTitle);
+                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+            }
+
+            public void onDrawerOpened(View drawerView) {
+                getActionBar().setTitle(mDrawerTitle);
+                invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
+            }
+        };
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+
+
+    }
 }

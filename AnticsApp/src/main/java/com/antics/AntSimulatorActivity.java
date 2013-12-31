@@ -4,6 +4,7 @@ import com.antics.objects.Hexagon;
 import com.antics.util.ConfigFile;
 import com.antics.util.Music;
 import com.antics.util.MusicConfig;
+import com.googlecode.androidannotations.annotations.EActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -11,6 +12,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
 
+@EActivity
 public class AntSimulatorActivity extends Activity {
 	private int MUSIC_START = 0;
 	private Boolean continueMusic = true;
@@ -29,7 +31,7 @@ public class AntSimulatorActivity extends Activity {
 			
 			public void run(){
 				
-				Intent mainMenu = new Intent(AntSimulatorActivity.this,MainMenuActivity.class);
+				Intent mainMenu = new Intent(AntSimulatorActivity.this,MainMenuActivity_.class);
 				AntSimulatorActivity.this.startActivity(mainMenu);
 				AntSimulatorActivity.this.finish();
 				//override pending transitions

@@ -4,5 +4,19 @@
     <string name="app_name">Antics</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="dummy_button">Dummy Button</string>
+    <string-array name="planets_array">
+
+    <item>Home</item>
+    <item>Search Subreddits</item>
+    <item>Remove Subreddit</item>
+    <item>Settings</item>
+    <item>My Account</item>
+    <item>Sign in</item>
+    <item>Sign out</item>
+</string-array>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="action_websearch">Web search</string>
+    <string name="app_not_available">Sorry, there\'s no web browser availabe</string>
 
 </resources>

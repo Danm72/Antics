@@ -1,6 +1,0 @@
-# incremental data. DO NOT EDIT.
-# format is <lastModified> <length> <SHA-1> <path>
-# Encoding is UTF-8
-1374734126000 1729 607cca6356cd15fbc499ad4425e5f69a9d7afd5d /Users/danmalone/Documents/Programming/2013/AndroidStudio/Antics/AntSimulatorActivity/libraries/library/res/values/attrs.xml
-1374734126000 111 a2f83232c9591327c5ec83c4266c88137bcbb5c6 /Users/danmalone/Documents/Programming/2013/AndroidStudio/Antics/AntSimulatorActivity/libraries/library/res/values/ids.xml
-1374734126000 266 9bd2c441463bac51f4f265fef8932883a0ce084e /Users/danmalone/Documents/Programming/2013/AndroidStudio/Antics/AntSimulatorActivity/libraries/library/res/layout/slidingmenumain.xml

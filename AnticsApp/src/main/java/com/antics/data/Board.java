@@ -5,9 +5,7 @@ import com.antics.ant.Ant;
 import com.antics.geometry.Point3D;
 import com.antics.objects.Hexagon;
 import com.antics.util.ConfigFile;
-import com.google.inject.Singleton;
 
-@Singleton
 public class Board {
 
     public int builder, gatherer, soldier, ants, dead = 0;

@@ -8,27 +8,26 @@
     </uses-feature>
 
     <uses-sdk
-        android:minSdkVersion="11"
-        android:targetSdkVersion="17" />
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/antlawnchair"
         android:label="@string/app_name">
-        <!--android:theme="@style/Sherlock.__Theme"-->
 
-        <activity android:name=".AntSimulatorActivity" >
+        <activity android:name="AntSimulatorActivity_" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainMenuActivity" >
+        <activity android:name="MainMenuActivity_" >
         </activity>
 
         <activity
-            android:name=".SimulatorFragment"
+            android:name="SimulatorFragment_"
             android:screenOrientation="portrait" >
         </activity>
     </application>

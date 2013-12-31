@@ -1,1 +1,1 @@
-include ':AnticsApp', ':libraries:library',':libraries:supportlibs'
+include ':AnticsApp'

@@ -7,6 +7,7 @@ package com.antics;
  * The draw frame draws the map, draws the characters and calls the action method on each sprite.
  */
 
+import android.app.Activity;
 import android.content.Context;
 import android.opengl.GLSurfaceView.Renderer;
 import android.os.Bundle;
@@ -22,7 +23,6 @@ import com.antics.util.ConfigFile;
 import com.antics.util.FrameRateConfig;
 import com.antics.util.MatrixHelper;
 import com.antics.util.TextureHelper;
-import roboguice.activity.RoboActivity;
 
 import javax.microedition.khronos.egl.EGLConfig;
 import javax.microedition.khronos.opengles.GL10;
@@ -33,7 +33,7 @@ import java.util.Map;
 import static android.opengl.GLES20.*;
 import static android.opengl.Matrix.*;
 
-public class SimulationRenderer extends RoboActivity implements Renderer {
+public class SimulationRenderer extends Activity implements Renderer {
     private final GameManager gameManager = new GameManager();
     private final Context context;
     private final float[] viewMatrix = new float[16];
