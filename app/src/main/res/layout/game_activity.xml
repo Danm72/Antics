@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                        xmlns:tools="http://schemas.android.com/tools"
+                                        android:id="@+id/drawer_layout"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent">
+    <!-- The main content view -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <fragment
+            android:id="@+id/fragment1"
+            class="com.antics.SimFragment"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            tools:layout="@layout/content_frame"/>
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <SeekBar
+                    android:id="@+id/seekBar1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/leftArrow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/seekBar1"
+                    android:layout_weight="2"
+                    android:contentDescription="left"
+                    android:src="@drawable/ic_arrow_back_black_24dp"/>
+
+                <ImageButton
+                    android:id="@+id/upArrow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/seekBar1"
+                    android:layout_toLeftOf="@+id/homebutton1"
+                    android:layout_toRightOf="@+id/leftArrow"
+                    android:layout_weight="2"
+                    android:contentDescription="UpArrow"
+                    android:src="@drawable/ic_arrow_upward_black_24dp"/>
+
+                <ImageButton
+                    android:id="@+id/homebutton1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/seekBar1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_weight="2"
+                    android:src="@android:drawable/ic_menu_add"/>
+
+                <ImageButton
+                    android:id="@+id/downArrow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_below="@+id/seekBar1"
+                    android:layout_toLeftOf="@+id/rightArrow"
+                    android:layout_toRightOf="@+id/homebutton1"
+                    android:layout_weight="2"
+                    android:contentDescription="down"
+                    android:src="@drawable/ic_arrow_downward_black_24dp"/>
+
+                <ImageButton
+                    android:id="@+id/rightArrow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/seekBar1"
+                    android:layout_weight="2"
+                    android:contentDescription="right"
+                    android:src="@drawable/ic_arrow_forward_black_24dp"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!-- The navigation drawer -->
+    <ListView
+        android:id="@+id/left_drawer"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:choiceMode="singleChoice"
+        android:divider="@android:drawable/divider_horizontal_dark"
+        android:dividerHeight="1dp"/>
+</android.support.v4.widget.DrawerLayout>
